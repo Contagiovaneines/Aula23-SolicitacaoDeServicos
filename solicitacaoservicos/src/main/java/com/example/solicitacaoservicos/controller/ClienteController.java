@@ -58,7 +58,7 @@ public class ClienteController {
         }
     }
 
-    // Atualizar cliente após edição (corrigido o mapeamento para POST)
+    // Atualizar cliente após edição 
     @PostMapping("/{id}/editar")
     public String atualizar(@PathVariable Long id, @ModelAttribute Cliente cliente) {
         cliente.setId(id);
