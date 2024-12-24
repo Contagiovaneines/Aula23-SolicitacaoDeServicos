@@ -49,6 +49,3 @@ Este projeto é uma aplicação desenvolvida com Spring Boot e Thymeleaf, permit
 
 Sinta-se à vontade para contribuir com o projeto. Se encontrar algum bug ou tiver sugestões de melhorias, abra uma issue ou envie um pull request!
 
-## Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
