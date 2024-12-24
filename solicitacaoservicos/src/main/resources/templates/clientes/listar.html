@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Lista de Clientes</h2>
+    <a href="/clientes/novo" class="btn btn-primary mb-3">Novo Cliente</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cliente : ${clientes}">
+            <td th:text="${cliente.id}"></td>
+            <td th:text="${cliente.nome}"></td>
+            <td th:text="${cliente.email}"></td>
+            <td th:text="${cliente.telefone}"></td>
+            <td th:text="${cliente.endereco}"></td>
+            <td>
+                <a th:href="@{/clientes/{id}/editar(id=${cliente.id})}" class="btn btn-warning btn-sm">Editar</a>
+                <!-- Excluir Cliente com Formulário POST -->
+                <form th:action="@{/clientes/{id}/excluir(id=${cliente.id})}" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
